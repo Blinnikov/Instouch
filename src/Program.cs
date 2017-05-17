@@ -1,4 +1,6 @@
 ﻿using System;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace src
 {
@@ -6,7 +8,11 @@ namespace src
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using(var driver = new ChromeDriver()) {
+                driver.Navigate().GoToUrl(@"https://vk.com");
+            }
+            
+            Console.ReadKey();
         }
     }
 }
