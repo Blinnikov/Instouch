@@ -8,7 +8,8 @@ namespace src
     {
         static void Main(string[] args)
         {
-            using(var driver = new ChromeDriver()) {
+            var driverPath = "./bin/Debug/netcoreapp1.1";
+            using(var driver = new ChromeDriver(driverPath)) {
                 driver.Navigate().GoToUrl(@"https://vk.com");
             }
         }
