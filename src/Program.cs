@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace src
+namespace Blinnikov.Instouch
 {
     class Program
     {
