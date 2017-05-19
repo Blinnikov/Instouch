@@ -7,5 +7,6 @@ namespace Blinnikov.Instouch.Services
         IWebElement GetLoginLink();
         IWebElement GetUsernameInput();
         IWebElement GetPasswordInput();
+        IWebElement GetLoginButton();
     }
 }

@@ -26,6 +26,8 @@ namespace Blinnikov.Instouch.Services
             usernameInput.SendKeys(this._appSettings.Username);
             IWebElement passwordInput = this._elementFinder.GetPasswordInput();
             passwordInput.SendKeys(this._appSettings.Password);
+            IWebElement loginButton = this._elementFinder.GetLoginButton();
+            loginButton.Click();
 
             return true;
         }

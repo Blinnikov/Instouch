@@ -27,5 +27,10 @@ namespace Blinnikov.Instouch.Services
         {
             return this._driver.FindElements(By.XPath(Element.FormInput))[1];
         }
+
+        public IWebElement GetLoginButton()
+        {
+            return this._driver.FindElement(By.XPath(Element.LoginButton));
+        }
     }
 }
