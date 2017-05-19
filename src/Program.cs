@@ -1,4 +1,5 @@
 ﻿using System;
+using Blinnikov.Instouch.Services;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -10,7 +11,11 @@ namespace Blinnikov.Instouch
         {
             var driverPath = "./bin/Debug/netcoreapp1.1";
             using(var driver = new ChromeDriver(driverPath)) {
-                driver.Navigate().GoToUrl(@"https://vk.com");
+                ILoginService loginService = new LoginService(driver);
+
+                loginService.Login();
+
+                Console.ReadKey();
             }
         }
     }
