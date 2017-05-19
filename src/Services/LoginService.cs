@@ -7,11 +7,13 @@ namespace Blinnikov.Instouch.Services
     {
         private readonly IWebDriver _driver;
         private readonly IElementFinder _elementFinder;
+        private readonly IAppSettings _appSettings;
 
-        public LoginService(IWebDriver driver, IElementFinder elementFinder)
+        public LoginService(IWebDriver driver, IElementFinder elementFinder, IAppSettings appSettings)
         {
             this._driver = driver;
             this._elementFinder = elementFinder;
+            this._appSettings = appSettings;
         }
 
         public bool Login()
@@ -21,7 +23,9 @@ namespace Blinnikov.Instouch.Services
             loginLink.Click();
 
             IWebElement usernameInput = this._elementFinder.GetUsernameInput();
-            usernameInput.SendKeys("ibazzva");
+            usernameInput.SendKeys(this._appSettings.Username);
+            IWebElement passwordInput = this._elementFinder.GetPasswordInput();
+            passwordInput.SendKeys(this._appSettings.Password);
 
             return true;
         }
