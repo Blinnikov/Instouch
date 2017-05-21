@@ -12,12 +12,8 @@ namespace Blinnikov.Instouch
         {
             IServiceProvider serviceProvider = BuildServiceProvider();
 
-            var driver = serviceProvider.GetService<IWebDriver>();
-            var loginService = serviceProvider.GetService<ILoginService>();
-            loginService.Login();
-
-            Console.ReadKey();
-            driver.Close();
+            var worker = serviceProvider.GetService<IWorker>();
+            worker.Run();
         }
 
         private static IServiceProvider BuildServiceProvider() {
