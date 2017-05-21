@@ -30,6 +30,7 @@ namespace Blinnikov.Instouch
             services.AddSingleton<IConfigurationRoot>(this.Configuration);
             services.AddSingleton<IAppSettings, AppSettings>();
             services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<ILikeService, LikeService>();
             services.AddTransient<IElementFinder, ElementFinder>();
             services.AddTransient<IImageFetcher, ImageFetcher>();
             services.AddTransient<IWorker, Worker>();
