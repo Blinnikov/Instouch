@@ -8,5 +8,7 @@ namespace Blinnikov.Instouch.Services.Scrape
         IWebElement GetUsernameInput();
         IWebElement GetPasswordInput();
         IWebElement GetLoginButton();
+        IWebElement GetLikeButton();
+        IWebElement GetUnlikeButton();
     }
 }

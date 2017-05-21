@@ -32,5 +32,27 @@ namespace Blinnikov.Instouch.Services.Scrape
         {
             return this._driver.FindElement(By.XPath(Element.LoginButton));
         }
+
+        public IWebElement GetLikeButton()
+        {
+            var elements = this._driver.FindElements(By.XPath(Element.LikeButton));
+            if(elements.Count == 1)
+            {
+                return elements[0];
+            }
+
+            return null;
+        }
+
+        public IWebElement GetUnlikeButton()
+        {
+            var elements = this._driver.FindElements(By.XPath(Element.UnlikeButton));
+            if(elements.Count == 1)
+            {
+                return elements[0];
+            }
+
+            return null;
+        }
     }
 }
