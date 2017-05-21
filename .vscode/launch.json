@@ -8,7 +8,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceRoot}/src/bin/Debug/netcoreapp1.1/instouch.dll",
             "args": [],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/src",
             "stopAtEntry": false,
             "console": "internalConsole"
         },
@@ -16,7 +16,8 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
-            "processId": "${command:pickProcess}"
+            "processId": "${command:pickProcess}",
+            "cwd": "${workspaceRoot}/src"
         }
     ]
 }
