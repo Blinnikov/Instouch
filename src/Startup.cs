@@ -1,4 +1,7 @@
 using Blinnikov.Instouch.Services;
+using Blinnikov.Instouch.Services.Common;
+using Blinnikov.Instouch.Services.Scrape;
+using Blinnikov.Instouch.Services.Steps;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenQA.Selenium;
@@ -28,6 +31,8 @@ namespace Blinnikov.Instouch
             services.AddSingleton<IAppSettings, AppSettings>();
             services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<IElementFinder, ElementFinder>();
+            services.AddTransient<IImageFetcher, ImageFetcher>();
+            services.AddTransient<IWorker, Worker>();
         }
     }
 }
