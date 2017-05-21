@@ -4,6 +4,6 @@ namespace Blinnikov.Instouch.Services.Scrape
 {
     public interface IImageFetcher
     {
-        IEnumerable<string> ByTag(string tag);
+        List<string> ByTag(string tag, bool skipTopPosts = true);
     }
 }
