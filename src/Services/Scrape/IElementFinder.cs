@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace Blinnikov.Instouch.Services
+namespace Blinnikov.Instouch.Services.Scrape
 {
     public interface IElementFinder
     {

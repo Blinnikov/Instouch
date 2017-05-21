@@ -1,7 +1,9 @@
 using System;
+using Blinnikov.Instouch.Services.Common;
+using Blinnikov.Instouch.Services.Scrape;
 using OpenQA.Selenium;
 
-namespace Blinnikov.Instouch.Services 
+namespace Blinnikov.Instouch.Services.Steps
 {
     public class LoginService : ILoginService 
     {

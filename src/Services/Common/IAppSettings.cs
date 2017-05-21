@@ -1,4 +1,4 @@
-namespace Blinnikov.Instouch.Services
+namespace Blinnikov.Instouch.Services.Common
 {
     public interface IAppSettings
     {

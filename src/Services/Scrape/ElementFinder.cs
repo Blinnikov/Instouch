@@ -2,7 +2,7 @@ using System;
 using Blinnikov.Instouch.Models;
 using OpenQA.Selenium;
 
-namespace Blinnikov.Instouch.Services
+namespace Blinnikov.Instouch.Services.Scrape
 {
     public class ElementFinder : IElementFinder
     {

@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Configuration;
 
-namespace Blinnikov.Instouch.Services
+namespace Blinnikov.Instouch.Services.Common
 {
     public class AppSettings : IAppSettings
     {
