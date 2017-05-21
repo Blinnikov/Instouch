@@ -19,8 +19,12 @@ namespace Blinnikov.Instouch.Services.Scrape
             var trimmedTag = tag.TrimStart('#');
             var tagPage = $"https://www.instagram.com/explore/tags/{trimmedTag}";
             this._driver.Navigate().GoToUrl(tagPage);
+
+            var main = this._driver.FindElement(By.TagName("main"));
+            var linkElements = main.FindElements(By.TagName("a"));
+            var links = linkElements.Select(le => le.GetAttribute("href"));
             
-            return Enumerable.Empty<string>();
+            return links;
         }
     }
 }
