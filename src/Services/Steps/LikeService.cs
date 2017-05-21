@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Blinnikov.Instouch.Services.Scrape;
 using OpenQA.Selenium;
 
@@ -36,6 +37,7 @@ namespace Blinnikov.Instouch.Services.Steps
             if(likeButton != null && unlikeButton == null) 
             {
                 likeButton.Click();
+                Thread.Sleep(2000);
                 Console.WriteLine("Liked");
             }
 

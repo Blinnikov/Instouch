@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 
 namespace Blinnikov.Instouch.Services.Scrape
@@ -20,8 +21,20 @@ namespace Blinnikov.Instouch.Services.Scrape
             var tagPage = $"https://www.instagram.com/explore/tags/{trimmedTag}";
             this._driver.Navigate().GoToUrl(tagPage);
             
+            var body = this._driver.FindElement(By.TagName("body"));
             var rootElement = this.GetRootElement(skipTopPosts);
             Console.WriteLine("Root element found");
+
+            var loadMoreButton = rootElement.FindElement(By.XPath("//div/a[text()='Load more']"));
+            body.SendKeys(Keys.End);
+            Console.WriteLine(loadMoreButton.Text);
+            loadMoreButton.Click();
+            Thread.Sleep(2000);
+
+            for(var i = 0; i < 10; i++) {
+                body.SendKeys(Keys.End);
+                Thread.Sleep(1000);
+            }
 
             var linkElements = rootElement.FindElements(By.TagName("a"));
             Console.WriteLine($"Links found - {linkElements.Count}");
